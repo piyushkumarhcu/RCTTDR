@@ -118,7 +118,7 @@ class Cluster{
     }
 
     ap_uint<12> clusterEnergy() {return (data & 0xFFF);}
-    ap_uint<5> towerEta() {return ((data >> 12) & 0x37);}
+    ap_uint<5> towerEta() {return ((data >> 12) & 0x1F);}
     ap_uint<2> towerPhi() {return ((data >> 17) & 0x3);}
     ap_uint<3> clusterEta() {return ((data >> 19) & 0x7);}
     ap_uint<3> clusterPhi() {return ((data >> 22) & 0x7);}
@@ -215,7 +215,7 @@ class tower_t {
 
     ap_uint<12> et() {return (data & 0xFFF);}
     ap_uint<3> hoe() {return ((data >> 12) & 0x7);}
-    ap_uint<1> satur() {return ((data >> 15) & 0x2);}
+    ap_uint<1> satur() {return ((data >> 15) & 0x1);}
 	
     operator uint16_t() {return (uint16_t) data;}
 
